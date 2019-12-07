@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>About Us | Cross Current Publisher</title>
+
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bulmahelper.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bulma-carousel.min.css' %}"/>
+	
+	<!--Scripts-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/dropzone.js' %}"></script>
+	<script src="{% static 'js/bulma-carousel.min.js' %}"></script>
+	<script src="https://kit.fontawesome.com/3d4a04bbba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class='container'>
+		<!--HEADER-->
+		{% include 'index/navbar.html' %}
+		<!--Main Content-->
+		<div class='container has-padding-10 bordered'>
+			<div class='columns'>
+				<div class='column is-3 has-padding-10'>
+					{% include 'index/left-bar.html' %}
+				</div>
+				<div class='column has-padding-10'>
+					<div class='container shadow has-padding-20' style='background: #355C7D;background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);'>
+						<p class='is-size-3 has-text-white' style='font-weight:600'>About Us</p><br><br>
+						<div class='columns'>
+							<div class='column'>
+								<p class='has-text-white'>
+									Cross Current Publisher is an international Publisher of peer reviewed journals. This Publisher is Running by SASPR Edu International Pvt. Ltd. (www.saspredu.com) and is Collaborated with other publishers Like SAS Publishers, India, Scholars Middle East Publisher, Dubai, East African Scholars Publisher, Kenya and South Asian Research Publication, Bangladesh.
+									<br><br>
+									Cross Current Publisher is aimed to publish quality Open Access Print Journals and share the resent outcomes in research and academics globally.
+									<br><br>
+									The Publication office is registered in the address<br>
+									House No. 204, Borhaowr,<br>
+									P.S-Murajhar, Dist-Hojai,<br> 
+									Assam-782439, India.
+								</p>
+							</div>
+							<div class='column'>
+								<figure class='image'>
+									<img class='is-rounded shadow' src='{% static "media/about-us-vector.jpg" %}' style='margin:auto'>
+								</figure>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER-->
+		{% include 'index/footer.html' %}
+	</div>
+</body>
+</html>

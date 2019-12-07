@@ -1,0 +1,58 @@
+{% load static %}
+<div style='display:block;height:10px;width: 100% !important;background-color: #d35400'>
+</div>
+<div class="header" style='border:1px solid #ccc;background-color: #ecf0f1'>
+	<div class='is-hidden-desktop'>
+		<a href='{% url "index" %}'>
+			<img src='{% static "media/mainLogo.png" %}'>
+		</a>
+	</div>
+	<div class='level container is-hidden-touch has-padding-30'>
+		<div class='level-left'>
+			<a href='{% url "index" %}'>
+			<img src='{% static "media/mainLogo.png" %}'>
+			</a>
+		</div>
+		<div class='level-right '>
+			<form method="get" action="https://www.google.com/search">
+				<div class='field has-addons'>
+					<div class='control'>
+						<input class='input' type="text" name="q" size="31" value="" placeholder="Search Titles, Keywords, Author ...">
+					</div>
+
+					<div class='control'>
+						<button class='button ' style='background-color: #d35400'><i class='fa fa-search has-text-white'></i></button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div>
+		<div class='columns is-gapless'>
+			<div class='column'>
+				<a href='{% url "index" %}' class='navbar-links has-text-centered'>HOME</a>
+			</div>
+			<div class='column'>
+				<a href='{% url "about_us" %}' class='navbar-links has-text-centered'>ABOUT US</a>
+			</div>
+			<div class='column'>
+				<a href='{% url "journals" %}' class='navbar-links has-text-centered'>JOURNALS</a>
+			</div>
+			<div class='column'>
+				<a href='{% url "author_guidelines" %}' class='navbar-links has-text-centered'>AUTHOR GUIDELINES</a>
+			</div>
+			<div class='column'>
+				<a href='' class='navbar-links has-text-centered'>ONLINE PAYMENT</a>
+			</div>
+			<div class='column'>
+				<a href='{% url "contact_us" %}' class='navbar-links has-text-centered'>CONTACT US</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class='manuscript-floater shadow tooltip'>
+	<a href='{% url "submitManuscript" %}'>
+		<i class='fa fa-paper-plane fa-2x has-text-white' style='margin:25%'></i>
+	</a>
+	<span class="tooltiptext">Manuscript Submission</span>
+</div>

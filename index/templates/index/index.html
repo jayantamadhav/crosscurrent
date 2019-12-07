@@ -1,0 +1,75 @@
+{% load static %}
+{% load template_next %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Home | Cross Current Publisher</title>
+
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bulmahelper.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bulma-carousel.min.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
+	<!--Slick slider-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/dropzone.js' %}"></script>
+	<script src="{% static 'js/bulma-carousel.min.js' %}"></script>
+	<script src="https://kit.fontawesome.com/3d4a04bbba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class='container'>
+		{% include 'index/navbar.html' %}
+		<div class='container has-padding-10 bordered'>
+			<div class='columns'>
+				<div class='column is-3 has-padding-10'>
+					{% include 'index/left-bar.html' %}
+				</div>
+				<div class='column has-padding-10'>
+					<div class='container shadow has-padding-10' style='background: #23074d;background: -webkit-linear-gradient(to right, #cc5333, #23074d);background: linear-gradient(to right, #cc5333, #23074d);color:white'>
+					<p class='is-size-4'>Cross Current Publisher</p><br>
+					<p>Cross Current Publisher is an academic publisher of open access journals. It also publishes academic books and conference proceedings. We currently have open access journals in the areas of science, technology and medicine.</p>
+					{% if journals %}
+					<div class='journal-slider has-margin-top-30 has-background-white has-padding-20'>
+						{% for journal in journals %}
+						<div>
+							<figure class='thumbnail'>
+								<img src='{{ journal.journal_thumb.url }}'>
+							</figure>
+						</div>
+						{% endfor %}
+					</div>
+					{% endif %}
+				</div>
+				<div class='container shadow has-padding-10 has-margin-top-10'>
+					<p class='is-size-4'>Recently Published Papers</p>
+					<div class='divider'></div><br>
+					{% if featured_articles %}
+					{% for fa in featured_articles %}
+					<div class='container has-margin-top-10 has-padding-10 bordered' style='border-radius: 7px'>
+						<div class='level'>
+							<div class='level-left'>
+								<div class='article-type-btn'>{{fa.article_type}}</div>
+							</div>
+							<div class='level-right'>
+								<p class=''><i class="fas fa-calendar-alt"></i> {{fa.publish_date}}</p>
+							</div>
+						</div>
+						<p class=''>{{fa.article_name}}</p>
+						<p class=''>{{fa.author}}</p>
+						<p class=''>DOI : {{fa.doi}}</p>
+					</div>
+					{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+	{% include 'index/footer.html' %}
+</div>
+</body>
+</html>

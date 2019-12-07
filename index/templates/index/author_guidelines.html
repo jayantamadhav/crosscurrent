@@ -1,0 +1,187 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Author Guidelines | Cross Current Publisher</title>
+
+	<meta name="viewport" content= "width=device-width, initial-scale=1.0"> 
+
+	<!--Stylesheets-->
+	<link rel="stylesheet" href="{% static 'css/custom.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bulmahelper.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bulma-carousel.min.css' %}"/>
+	
+	<!--Scripts-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/dropzone.js' %}"></script>
+	<script src="{% static 'js/bulma-carousel.min.js' %}"></script>
+	<script src="https://kit.fontawesome.com/3d4a04bbba.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class='container'>
+		<!--HEADER-->
+		{% include 'index/navbar.html' %}
+		<!--Main Content-->
+		<div class='container has-padding-10 bordered'>
+			<div class='columns'>
+				<div class='column is-3 has-padding-10'>
+					{% include 'index/left-bar.html' %}
+				</div>
+				<div class='column has-padding-10'>
+					<div class='container has-padding-bottom-50'>
+						<p class='' style='color:#718093'>
+							<span class='is-size-3' style='color:#e84118;font-weight:600'>MANUSCRIPT FORMAT</span><br><br>
+							<strong>Language: Papers are accepted only in English</strong><br><br>
+
+							<strong>Page format</strong>: The manuscripts should be prepared as Microsoft-word documents in Times New Roman (font size 12) on A4 size leaving the margins of 1 inch on all four sides in single column. The line spacing should be single-spaced including references and tables. Tables and Figures should be in their respective position in manuscript with title of Table/Legends of Figure. Articles should be within 20 printable pages. Extra pages will be charged.
+							<br><br>
+							The manuscript should be in single word file which contains the title page following full manuscript.
+							<br><br>
+
+							<strong>Title Page</strong>:The title page contains title of the manuscript, all author names and their corresponding affiliations as well as complete mailing address, telephone and E-mail. The designated corresponding author must be identified by an asterisk.
+							<br><br>
+
+							The full length Research Articles should be arranged using the following headings; Abstract, Keywords, Introduction, Experimental section, Results and Discussion, Conclusion, Acknowledgement (optional) and References.
+							<br><br>
+							The Review, Short Communications, Essay, Book reviews should follow the standard method as requirement.
+							<br><br>
+							<strong>Abstract</strong>:  It should not exceed 250 words in a single paragraph and not required sub-headings and should be a brief summary of the work carried out including the objectives of the study, the techniques used and what was accomplished in a concise manner.
+							<br><br>
+							<strong>Keywords</strong>: It should contain up to 6-10 key terms related to the work separated by commas.
+							<br><br>
+							<strong>Introduction</strong>: It should represent the background significance, brief survey of the previous works, purpose, scope and novelty of the research work and should not have subheadings.
+							<br><br>
+							<strong>Methodology</strong>: Sufficient information in detail regarding the materials and the methods used to carry out the research works (analytical, statistical and experimental procedures) should be mentioned to enable the others to repeat the authors work. Source of chemicals and drugs, animals used, ethical committee permission should be mentioned.
+							<br><br>
+							Results and Discussion: It should contain summary of the research, results, interpretations, speculations and assessment of future research or prospects.
+							<br><br>
+							<strong>Conclusion</strong>: It should include outcome of the work, important findings and your view(s).
+							<br><br>
+							<strong>Acknowledgements (if any)</strong>: It should have the brief information regarding any research grant support or the assistance of colleagues or institutions.
+							<br><br>
+							<strong>References</strong>: They should be arranged at the end of the manuscript in order of their appearance the text. The references should be presented in square bracket in e.g., [1] in the text. They should be arranged at the end of the manuscript in order of their appearance the text.  References should follow the APA Citation Style.
+							<br><br>
+							<strong>For examples</strong>
+							<br><br>
+							<strong>Articles in journals, magazines, and newspapers</strong>
+							<br><br>
+							References to periodical articles must include the following elements: author(s), date of publication, article title, journal title, volume number, issue number (if applicable), and page numbers.
+							<br><br>
+							<strong>Journal article (one author)</strong>
+							<br><br>
+							Ku, G. (2008). Learning to de-escalate: The effects of regret in escalation of commitment. Organizational Behavior and Human Decision Processes, 105(2), 221-232.
+							<br><br>
+							<strong>Journal article, more authors,</strong>
+							<br><br>	
+							Van Vugt, M., Hogan, R., & Kaiser, R. B. (2008). Leadership, followership, and evolution: Some lessons from the past. American Psychologist, 63(3), 182-196.
+							<br><br>
+							<strong>Article from an Internet-only journal</strong>
+							<br><br>
+							Hirtle, P. B. (2008, July-August). Copyright renewal, copyright restoration, and the difficulty of determining copyright status. D-Lib Magazine, 14(7/8).
+							<br><br>
+							<strong>Magazine article, in print</strong>
+							<br><br>
+							Kluger, J. (2008, January 28). Why we love. Time, 171(4), 54-60.
+							<br><br>
+							<strong>Newspaper article, no author, in print</strong>
+							<br><br>
+							As prices surge, Thailand pitches OPEC-style rice cartel. (2008, May 5). The Wall Street Journal, p. A9.
+							<br><br>
+							<strong>Books</strong>
+							<br><br>
+							References to an entire book must include the following elements: author(s) or editor(s), date of publication, title, place of publication, and the name of the publisher.
+							<br><br>
+							<strong>No Author or editor, in print</strong>
+							<br><br>
+							Merriam-Webster’s collegiate dictionary (11th ed.). (2003). Springfield, MA: Merriam- Webster.
+							<br><br>
+							<strong>One author, in print</strong>
+							<br><br>
+							Kidder, T. (1981). The soul of a new machine. Boston, MA: Little, Brown & Company.
+							<br><br>
+							<strong>Two authors, in print</strong>
+							<br><br>
+							Frank, R. H., & Bernanke, B. (2007). Principles of macro-economics (3rd ed.). Boston, MA: McGraw-Hill/Irwin.
+							<br><br>
+							<strong>Edited book</strong>
+							<br><br>
+							Gibbs, J. T., & Huang, L. N. (Eds.). (2001). Children of color: Psychological interventions with culturally diverse youth. San Francisco, CA: Jossey-Bass.
+							<br><br>
+							<strong>Dissertations</strong>
+							<br><br>
+							Young, R. F. (2007). Crossing boundaries in urban ecology: Pathways to sustainable cities (Doctoral dissertation). Available from ProQuest Dissertations & Theses database. (UMI No. 327681)
+							<br><br>
+							<strong>Essays or chapters in edited books</strong>
+							<br><br>
+							Hammond, K. R., & Adelman, L. (1986). Science, values, and human judgment. In H. R. Arkes & K. R. Hammond (Eds.), Judgement and decision making: An interdisciplinary reader (pp. 127-143). Cambridge, England: Cambridge University Press.
+							<br><br>
+							<strong>Encyclopedias or dictionaries and entries in an encyclopedia</strong>
+							<br><br>
+							Sadie, S., & Tyrrell, J. (Eds.). (2002). The new Grove dictionary of music and musicians (2nd ed., Vols. 1-29). New York, NY: Grove.
+							<br><br>
+							<strong>Article from an online encyclopedia</strong>
+							<br><br>
+							Containerization. (2008). In Encyclopædia Britannica. Retrieved May 6, 2008, from http://search.eb.com
+							<br><br>
+
+							<span class='is-size-3' style='color:#e84118;font-weight:600'>PUBLICATION ETHICS</span>
+							<br><br>
+
+							When an author submits a manuscript to for publication consideration, he or she agrees to abide by publication requirements crosscurrent publisher,
+							<br><br>
+							Agree that his or her manuscript presents work that is original, not plagiarized; that he or she has not submitted the manuscript under review for publication elsewhere; and that he or she will not submit the manuscript under review to another publication during the review period  in our these journals.
+							<br><br>
+							Take full responsibility for the work he or she submits to and publishes with the Cross-Current Publisher.
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Authorship</span>
+							<br><br>
+							Authorship should be limited to people who have contributed substantially to the work. The corresponding author must have obtained permission from all the authors mentioned in the manuscript. The corresponding author is responsible for ensuring adherence to all editorial and submission policies and for any communications and actions that may be necessary after publication. A maximum of two corresponding authors are allowed for the responsibilities associated. 
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Conflict of Interest</span>
+							<br><br>
+							The authors must declare any conflict of interest with any financial body or funding agency or anything else that might influence the results or interpretation of their manuscript. All authors, members, reviewers and editors must disclose any association that poses a conflict of interest in connection with the manuscript. The author(s) ought to hold obligation in giving conflicts any to stay away from further conflicts. 
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Plagiarism and duplicate submission</span>
+							<br><br>
+							Plagiarism is duplicating the precise of publishing information. Editor checks each submitted manuscript that is been submitted to any of its associate publishing journal. Any article that has incompletely/totally with plagiarized information will be dismissed promptly. 
+							<br><br>
+							Manuscripts submitted to our  journals should not have been published before and not concurrently be submitted elsewhere.  If duplicate submission is detected during peer review, the manuscript may be rejected. If it is detected after publication, the manuscript may be retracted. 
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Open Access Policy</span>
+							<br><br>
+							Cross Current provides immediate open access to its content on making freely available to the global exchange of knowledge in non-commercial purpose. Manuscripts are published under the CC-BY-NC license, which allows the manuscript to be freely shared or used, as long as attribution is given for non-commercial purpose. Authors can freely to post the published manuscript on personal websites, institutional repositories, and any other database. 
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Privacy Protection</span>: Editor(s), Reviewer(s) should be consciously taking care of the work of the author(s). Editor(s) and Reviewer(s) should not utilize/disperse the unpublished work.  
+							<br><br>
+							<span style='color:#e84118;font-weight:600'>Human and Animal Rights</span>: Clear proclamations and ethical clearance statements should be provided while submitting article if it requires. The work including animal models and human volunteers need to submit the essential proclamations.
+							<br><br> 
+							<span class='is-size-3' style='color:#e84118;font-weight:600'>PEER REVIEW PROCESS</span>
+							<br><br>
+							After receiving the manuscript Publisher office will assign a manuscript number and it allowed directly to managing editors/executive editors for initial review of article. If the manuscript is not found suitable by editorial office it will be directly rejected. If the manuscript is found acceptable then it will send to reviewer for evaluation or it may send to author for further modification or correction. Depending on the reviewer decision, the manuscript will be accepted or may reject or may be modified by authors or can do minor modification by editorial office.
+							<br><br>
+							We aim to do this quickly so that we do not waste authors’ time, allowing them to get on and submit the work elsewhere without unnecessary delay. The usual reasons for rejection at this stage are originality, plagiarism or insufficient data or irrelevant.
+							<br><br>
+							We ask reviewers to send their reports and on assigned standard form which will send with manuscript. Reviewers advise the editors/editorial team, who make the final decision.
+							<br><br>
+							<span class='is-size-3' style='color:#e84118;font-weight:600'>PUBLICATION FEE</span>
+							<br><br>
+							The authors need to pay very nominal publication fees for one manuscript only after acceptance of manuscript. The Normal publication fees is INR 1500/- or 25 USD.
+							<br><br>
+							<strong>N.B:</strong>
+							For Fast Publication within 3 days- INR -3000 (Indian Authors) or USD 50 (Foreign Authors). Hard Copy Fee need to pay extra INR 1000 or 25 USD for each copy.
+
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER-->
+		{% include 'index/footer.html' %}
+	</div>
+</body>
+</html>

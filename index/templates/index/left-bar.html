@@ -1,0 +1,19 @@
+{% load static %}
+<div class='container bordered has-padding-10 shadow has-background-white'>
+	<p class='is-size-4'>Browse Menu</p>
+	<div class='divider'></div><br>
+	<a href='#'>Journals by subject</a><br>
+	<a href='#'>Journals by title</a>
+</div>
+<div class='container bordered has-padding-10 shadow has-margin-top-10 has-background-white'>
+	<p class='is-size-4'>Browse Subjects</p>
+	<div class='divider'></div><br>
+	{% if journals %}
+	{% for journal in journals %}
+	<a href='{% url "journal_details" url=journal.journal_url %}'>{{journal.subject}}</a><br>
+	{% endfor %}
+	{% endif %}
+</div>
+<div class='container has-margin-top-10'>
+	<a href='{% url "submitManuscript" %}' class='has-text-white'><button class='btn' style='width:100%'>PAPER SUBMISSION</button></a>
+</div>
