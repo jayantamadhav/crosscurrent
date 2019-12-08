@@ -1,0 +1,45 @@
+{% load static %}
+{% if articles%}
+{% for article in articles %}
+<div class='container has-margin-10 has-padding-10 bordered' style='border-radius: 7px'>
+	<div class='level'>
+		<div class='level-left'>
+			<div class='article-type-btn'>{{article.article_type}}</div>
+		</div>
+		<div class='level-right'>
+			<p class=''><i class="fas fa-calendar-alt"></i> {{article.publish_date}}</p>
+		</div>
+	</div>
+	<p class=''><i class='fa fa-user'></i>&nbsp;{{article.article_name}}</p>
+	<p class=''><i class='fa fa-bookmark'></i>&nbsp;{{article.author}}</p>
+	<p class=''><i class='fa fa-tag'></i>&nbsp;<span style='font-weight:600'>DOI</span> : {{article.doi}}</p>
+
+	<div class='is-inline-block has-margin-top-10' >
+		<button class='article-button jd-abstract-button' data-id='{{ forloop.counter }}'>
+			<i class='fa fa-scroll'></i> Abstract
+		</button>
+		<a href="{{article.article.url}}" class='has-text-white' download>
+			<button class='article-button'>
+				<i class='fa fa-file-pdf'></i> PDF
+			</button>
+		</a>
+		<a href="{{article.article.url}}"  class='has-text-white' >
+			<button  class='article-button'>
+				<i class='fa fa-file'></i> Full-Text
+			</button>
+		</a>
+		<a href="{{article.article.url}}"  class='has-text-white' download>
+			<button  class='article-button' style='background-color: green; color:white'>e-Pub</button>
+		</a>
+	</div>
+
+	<div class='jd-abstract-panel-{{forloop.counter}}' style='display: none'>
+		{% if article.abstract %}
+		{{article.abstract}}
+		{% else %}
+		<p> Abstract Not Found </p>
+		{% endif %}
+	</div>
+</div>
+{% endfor %}
+{% endif %}

@@ -4,17 +4,23 @@ import os
 # Create your models here.
 
 class Journal(models.Model):
-	journal_name 		= models.CharField(verbose_name = "Journal", max_length=100)
-	abbr_title			= models.CharField(verbose_name = "Abbr. Title", max_length=100)
-	journal_url 		= models.CharField(verbose_name = "Journal URL", max_length=50)
-	subject				= models.CharField(verbose_name = "subject", max_length=50, null= True, blank=True)
+	journal_name 		= models.CharField(verbose_name = "Journal", max_length=200)
+	abbr_title			= models.CharField(verbose_name = "Abbr. Title", max_length=200)
+	journal_url 		= models.CharField(verbose_name = "Journal URL", max_length=100)
+	subject				= models.CharField(verbose_name = "subject", max_length=100, null= True, blank=True)
 	issn_print 			= models.CharField(verbose_name = "ISSN Print", max_length=50 )
 	issn_online			= models.CharField(verbose_name = "ISSN Online", max_length=50 )
 	frequency			= models.CharField(verbose_name = "Frequency", max_length=50, blank=True, default="N/A")
-	chief_editor		= models.CharField(verbose_name = "chief editor", max_length=50)
-	origin_country		= models.CharField(verbose_name = "Origin", max_length=50,  blank=True, default="N/A")
-	language			= models.CharField(verbose_name = "Language", max_length=50, blank=True, default="N/A")
-	publisher			= models.CharField(verbose_name = "Publisher", max_length=50, blank=True, default="N/A")
+	pub_years			= models.CharField(verbose_name = "Publication Years", max_length=200, blank=True, default="N/A")
+	pub_count			= models.CharField(verbose_name = "Publication Count", max_length=200, blank=True, default="N/A")
+	citation_count		= models.CharField(verbose_name = "Citation Count", max_length=200, blank=True, default="N/A")
+	article_dl			= models.CharField(verbose_name = "Downloads/Article", max_length=200, blank=True, default="N/A")
+	article_cite		= models.CharField(verbose_name = "Citations/Article", max_length=200, blank=True, default="N/A")
+	chief_editor		= models.CharField(verbose_name = "chief editor", max_length=400)
+	chief_editor_desg	= models.CharField(verbose_name = "chief editor designation", max_length=400)
+	origin_country		= models.CharField(verbose_name = "Origin", max_length=100,  blank=True, default="N/A")
+	language			= models.CharField(verbose_name = "Language", max_length=100, blank=True, default="N/A")
+	publisher			= models.CharField(verbose_name = "Publisher", max_length=100, blank=True, default="N/A")
 	journal_info		= models.TextField(verbose_name = "Info", max_length=2000)
 	journal_scope		= models.TextField(verbose_name = 'Scope', max_length=2000, null=True, blank=True)
 	journal_cover		= models.ImageField(upload_to ='journals/', verbose_name = "Cover")
@@ -26,16 +32,16 @@ class Journal(models.Model):
 
 class Volume(models.Model):
 	journal 			= models.ForeignKey(Journal, on_delete=models.CASCADE)
-	volume_name			= models.CharField(verbose_name = "Volume name", max_length=100)
+	volume_name			= models.CharField(verbose_name = "Volume name", max_length=200)
 	volume_year			= models.PositiveIntegerField(verbose_name="Year")
-	issue_name			= models.CharField(verbose_name="Issue", max_length=100)
+	issue_name			= models.CharField(verbose_name="Issue", max_length=200)
 
 	def __str__(self):
 		return self.volume_name
 
 class Article(models.Model):
 	volume 				= models.ForeignKey(Volume, on_delete=models.CASCADE)
-	article_type		= models.CharField(verbose_name="Type", max_length=40)
+	article_type		= models.CharField(verbose_name="Type", max_length=100)
 	article_name 		= models.CharField(verbose_name = "Article", max_length=500)
 	article_abbr		= models.CharField(verbose_name='Abbr', max_length=100, blank=True, null=True)
 	author				= models.CharField(verbose_name = "Author", max_length=200)
@@ -43,6 +49,8 @@ class Article(models.Model):
 	abstract			= models.TextField(verbose_name='Abstract', max_length=2000, null=True, blank=True)
 	doi 				= models.CharField(verbose_name='DOI', max_length=100)
 	publish_date		= models.DateField()
+	d_count				= models.PositiveIntegerField()
+	v_count				= models.PositiveIntegerField()
 
 	def __str__(self):
 		return self.article_name
@@ -74,6 +82,8 @@ class FeaturedArticle(models.Model):
 	abstract			= models.TextField(verbose_name='Abstract', max_length=2000, null=True, blank=True)
 	doi 				= models.CharField(verbose_name='DOI', max_length=100, null=True,blank=True)
 	publish_date		= models.DateField()
+	d_count				= models.PositiveIntegerField()
+	v_count				= models.PositiveIntegerField()
 
 	def clean(self):
 		validate_only_ten(self)
@@ -105,7 +115,9 @@ class JournalFee(models.Model):
 	journal = models.ForeignKey(Journal, on_delete=models.CASCADE)
 	usd 	= models.PositiveIntegerField(verbose_name="USD")
 	inr 	= models.PositiveIntegerField(verbose_name="INR")
-	kes		= models.PositiveIntegerField(verbose_name='KES')
+
+	def __str__(self):
+		return self.journal.journal_name
 
 class MemberIn(models.Model):
 	company_logo = models.ImageField(upload_to='membersin/', blank=True)

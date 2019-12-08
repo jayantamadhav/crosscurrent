@@ -1,0 +1,40 @@
+{% load static %}
+<div class='container bordered has-padding-10 shadow'  style='background-color:#fffed7'>
+	<p class='is-size-4' style='color:#154360'>{{ journal.abbr_title}} Stats</p>
+	<div class='divider'></div>
+	<table class='table is-bordered is-fullwidth'>
+		<tbody>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Publication Years</strong></td>
+				<td  style='background-color:#fffed7'>{{journal.pub_years}}</td>
+			</tr>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Publication Count</strong></td>
+				<td  style='background-color:#fffed7'>{{journal.pub_count}}</td>
+			</tr>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Citation Count</strong></td>
+				<td  style='background-color:#fffed7'>{{journal.citation_count}}</td>
+			</tr>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Impact Factor</strong></td>
+				<td  style='background-color:#fffed7'>{{current_if}}</td>
+			</tr>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Downloads/article</strong></td>
+				<td  style='background-color:#fffed7'>{{ journal.article_dl}}</td>
+			</tr>
+			<tr>
+				<td  style='background-color: #fbe1b5;'><strong>Citations/article</strong></td>
+				<td  style='background-color:#fffed7'>{{journal.article_cite}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class='container bordered shadow has-margin-top-10' style='background-color:#fffed7'>
+	<p class='has-padding-10 right-button'><i class='fa fa-angle-double-right'></i> &nbsp; Open Special Issues</p>
+	<div class='divider'></div>
+	<p class='has-padding-10 right-button'><i class='fa fa-angle-double-right'></i> &nbsp; Published Special Issues</p>
+	<div class='divider'></div>
+	<p class='has-padding-10 right-button'><i class='fa fa-angle-double-right'></i> &nbsp; Special Issues Guidelines</p>
+</div>

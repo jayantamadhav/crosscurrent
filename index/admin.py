@@ -56,7 +56,7 @@ class JournalAdmin(NestedModelAdmin):
 
 
 class JournalFeeAdmin(admin.ModelAdmin):
-    list_display = ('journal', 'usd', 'inr', 'kes')
+    list_display = ('journal', 'usd', 'inr')
 
     filter_horizontal = ()
     list_filter = ()

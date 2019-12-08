@@ -39,7 +39,7 @@
 						<div class='column is-6 bordered shadow'>
 							<div class='columns'>
 								<div class='column is-5'>
-									<img src='{{ journal.journal_thumb.url }}' style='margin:auto;'>
+									<a href='{% url "journal_details" url=journal.journal_url %}'><img src='{{ journal.journal_thumb.url }}' style='margin:auto;'></a>
 								</div>
 								<div class='column'>
 									<p>
@@ -49,7 +49,9 @@
 										Subject : {{journal.subject}}<br>
 									</p>
 									<br><br>
-									<button class='btn'>View more</button>
+									<a href='{% url "journal_details" url=journal.journal_url %}'>
+										<button class='btn'>View more</button>
+									</a>
 								</div>
 							</div>
 						</div>

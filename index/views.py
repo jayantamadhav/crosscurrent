@@ -89,11 +89,14 @@ def journal_details(request, url):
 	top_reviewers = TopReviewer.objects.all()
 	memberin = MemberIn.objects.all()
 	articles = Article.objects.all().filter(volume__journal__id = journal.id).order_by('-publish_date')[:7]
-	'''for volume in volumes:
-		for article in filtered_article.all().filter(volume = volume):
-			articles.append(article)
-	articles = list(articles)[:7]'''
 	latest_articles = Article.objects.all().order_by('-publish_date')
+	processing_fee = JournalFee.objects.filter(journal__id=journal.id)
+	for i in processing_fee:
+		fee_usd = i.usd
+		fee_inr = i.inr
+	for i in impact_factor[::-1]:
+		current_if=i.impact_factor
+		break
 	context = {
 		'latest_articles' : latest_articles,
 		'journal' 	: journal,
@@ -107,6 +110,9 @@ def journal_details(request, url):
 		'indexing' : indexing,
 		'impact_factor' : impact_factor,
 		'aotm' : aotm,
+		'current_if' : current_if,
+		'fee_usd' : fee_usd,
+		'fee_inr' : fee_inr,
 	}
 	return render(request, 'index/journal_details.html', context)
 

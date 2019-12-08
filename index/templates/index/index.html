@@ -31,14 +31,16 @@
 				</div>
 				<div class='column has-padding-10'>
 					<div class='container shadow has-padding-10' style='background: #23074d;background: -webkit-linear-gradient(to right, #cc5333, #23074d);background: linear-gradient(to right, #cc5333, #23074d);color:white'>
-					<p class='is-size-4'>Cross Current Publisher</p><br>
+					<p class='is-size-4 strong'>Cross Current Publisher</p><br>
 					<p>Cross Current Publisher is an academic publisher of open access journals. It also publishes academic books and conference proceedings. We currently have open access journals in the areas of science, technology and medicine.</p>
 					{% if journals %}
 					<div class='journal-slider has-margin-top-30 has-background-white has-padding-20'>
 						{% for journal in journals %}
 						<div>
 							<figure class='thumbnail'>
-								<img src='{{ journal.journal_thumb.url }}'>
+								<a href='{% url "journal_details" url=journal.journal_url %}'>
+									<img src='{{ journal.journal_thumb.url }}'>
+								</a>
 							</figure>
 						</div>
 						{% endfor %}
@@ -46,7 +48,7 @@
 					{% endif %}
 				</div>
 				<div class='container shadow has-padding-10 has-margin-top-10'>
-					<p class='is-size-4'>Recently Published Papers</p>
+					<p class='is-size-4 strong'>Recently Published Papers</p>
 					<div class='divider'></div><br>
 					{% if featured_articles %}
 					{% for fa in featured_articles %}
